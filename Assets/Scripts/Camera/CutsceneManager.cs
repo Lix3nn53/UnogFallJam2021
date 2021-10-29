@@ -24,7 +24,12 @@ public class CutsceneManager : MonoBehaviour
 
     public void StartCutscene(string sceneName) {
         cameraAnimator.SetBool(sceneName, true);
+
         characterController.DisableInput = true;
+        Rigidbody2D rigidbody = characterController.gameObject.GetComponent<Rigidbody2D>();
+        rigidbody.velocity = new Vector3();
+        PlayerAnimationController animationController = characterController.gameObject.GetComponent<PlayerAnimationController>();
+		animationController.OnMove(0f);
 
         StartCoroutine(EndCutscene(sceneName, 2f));
     }

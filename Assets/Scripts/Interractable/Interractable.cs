@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interractable : MonoBehaviour
 {
     public GameObject keyGuide;
+    
     public virtual void OnTriggerEnter2D(Collider2D other) {
         var go = other.gameObject;
         if (go == null || !other.gameObject.CompareTag("Player"))
