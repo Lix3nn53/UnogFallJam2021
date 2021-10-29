@@ -18,13 +18,13 @@ public class PlayerAnimationController : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(speed));
     }
 
-    public void Flip(bool right) {
+    /* public void Flip(bool right) {
         if (right) {
             characterRenderer.flipX = false;
         } else {
             characterRenderer.flipX = true;
         }
-    }
+    } */
 
     public void OnJump() {
         animator.SetBool("IsJumping", true);

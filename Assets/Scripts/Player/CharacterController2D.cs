@@ -27,6 +27,9 @@ public class CharacterController2D : MonoBehaviour
 	// Animator
 	private PlayerAnimationController m_playerAnimationController;
 
+	// State
+	public bool DisableInput = false;
+
 	[Header("Events")]
 	[Space]
 
@@ -64,6 +67,8 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Move(float move, bool jump)
 	{
+		if (DisableInput) return;
+
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
@@ -77,15 +82,13 @@ public class CharacterController2D : MonoBehaviour
 			if (move > 0 && !m_FacingRight)
 			{
 				// ... flip the player.
-				m_playerAnimationController.Flip(true);
-				m_FacingRight = true;
+				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
 			else if (move < 0 && m_FacingRight)
 			{
 				// ... flip the player.
-				m_playerAnimationController.Flip(false);
-				m_FacingRight = false;
+				Flip();
 			}
 		}
 		// If the player should jump...
@@ -98,6 +101,14 @@ public class CharacterController2D : MonoBehaviour
 		} else if (m_Grounded) {
 			m_playerAnimationController.OnJumpEnd();
 		}
+	}
+
+	private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		m_FacingRight = !m_FacingRight;
+
+		transform.Rotate(0, 180, 0);
 	}
 
 	// INPUTS
