@@ -18,10 +18,12 @@ public class CharacterController2D : MonoBehaviour
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+
+	private bool m_jumpCooldown = false;
 	private Vector3 m_Velocity = Vector3.zero;
 
 	// INPUTS
-    private float movementInput;
+  private float movementInput;
 	private bool isJumping = false;
 
 	// Animator
@@ -92,16 +94,25 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if (m_Grounded && jump && !m_jumpCooldown)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			m_playerAnimationController.OnJump();
+			StartCoroutine(jumpCooldown());
 		} else if (m_Grounded) {
 			m_playerAnimationController.OnJumpEnd();
 		}
 	}
+
+	IEnumerator jumpCooldown() {
+        m_jumpCooldown = true;
+
+        yield return new WaitForSeconds(0.6f);
+
+        m_jumpCooldown = false;
+    }
 
 	private void Flip()
 	{

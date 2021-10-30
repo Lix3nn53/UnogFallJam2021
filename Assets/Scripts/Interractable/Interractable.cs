@@ -26,6 +26,7 @@ public class Interractable : MonoBehaviour
             return;
 
         Player player = go.GetComponent<Player>();
+        player.SetSelectedInterractable(null);
         
         if (keyGuide != null) {
             keyGuide.SetActive(false);

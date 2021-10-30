@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class IngredientOnGround : Interractable
 {
+    public GameObject playerObject;
     public IngredientType ingredientType;
 
     private CinemachineImpulseSource cinemachineImpulseSource;
@@ -18,6 +19,10 @@ public class IngredientOnGround : Interractable
     public override void OnInterract() {
         this.keyGuide.SetActive(false);
         effect.SetActive(true);
+
+        Player player = playerObject.GetComponent<Player>();
+        player.SetSelectedInterractable(null);
+        
         RecipeManager.Instance.OnFind(ingredientType);
 
         CutsceneManager.Instance.StartCutscene(ingredientType.ToString());
