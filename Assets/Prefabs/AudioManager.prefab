@@ -43,4 +43,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03dd7427b48bdc440b5169c7d7bfe6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: []
+  soundList:
+  - soundName: Background
+    clip: {fileID: 8300000, guid: 59c9dac362a89284bbf6517b8cc159ae, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - soundName: kapow
+    clip: {fileID: 8300000, guid: 19647eb9418de7e4f98fee9af7e6e2ca, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: find
+    clip: {fileID: 8300000, guid: ca66963c59efee7428113a28bfc17b79, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: jump
+    clip: {fileID: 8300000, guid: ba2c8cf8bd31d7245952c336096f1d40, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: interractEnter
+    clip: {fileID: 8300000, guid: 32473c168ff22dd429367896427f8085, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - soundName: extra
+    clip: {fileID: 8300000, guid: 02ea3365d25a462498734204edc2451e, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

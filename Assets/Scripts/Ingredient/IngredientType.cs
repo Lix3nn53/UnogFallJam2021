@@ -5,5 +5,9 @@ using UnityEngine;
 public enum IngredientType {
     RECIPE,
     HAT,
-    SUGAR
+    CANDY,
+    BAT,
+    SKULL,
+    WOOL_BALL,
+    CANDLE
 }

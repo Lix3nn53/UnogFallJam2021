@@ -10,6 +10,8 @@ public class IngredientOnGround : Interractable
 
     private CinemachineImpulseSource cinemachineImpulseSource;
     public GameObject effect;
+
+    public GameObject[] enable;
     
     private void Awake()
     {
@@ -27,5 +29,9 @@ public class IngredientOnGround : Interractable
 
         CutsceneManager.Instance.StartCutscene(ingredientType.ToString());
         cinemachineImpulseSource.GenerateImpulse();
+
+        foreach (GameObject g in enable) {
+            g.SetActive(true);
+        }
     }
 }

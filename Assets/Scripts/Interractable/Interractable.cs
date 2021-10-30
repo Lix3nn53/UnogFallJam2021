@@ -18,6 +18,8 @@ public class Interractable : MonoBehaviour
         }
 
         player.SetSelectedInterractable(this);
+
+        AudioManager.Instance.Play("interractEnter");
     }
     
     public virtual void OnTriggerExit2D(Collider2D other) {

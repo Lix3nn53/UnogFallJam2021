@@ -96,6 +96,7 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump && !m_jumpCooldown)
 		{
+      AudioManager.Instance.Play("jump");
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
@@ -107,12 +108,12 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 	IEnumerator jumpCooldown() {
-        m_jumpCooldown = true;
+			m_jumpCooldown = true;
 
-        yield return new WaitForSeconds(0.6f);
+			yield return new WaitForSeconds(0.6f);
 
-        m_jumpCooldown = false;
-    }
+			m_jumpCooldown = false;
+	}
 
 	private void Flip()
 	{

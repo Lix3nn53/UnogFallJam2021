@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WITCH CAT
+  m_text: MAMA RECIPE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd94b0d53eccdae44b751b636e2cfc59, type: 2}
   m_sharedMaterial: {fileID: -1051906485184233744, guid: bd94b0d53eccdae44b751b636e2cfc59, type: 2}
@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -17.253288, y: 0, z: -23.527199, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
